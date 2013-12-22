@@ -7,6 +7,7 @@
     <string name="title_help_message">Help the World!</string>
     <string name="new_alarm_string">Create an Alarm</string>
     <string name="new_alarm_button_string">New Alarm</string>
-    
+    <string name="title_activity_new_alarm">NewAlarmActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
