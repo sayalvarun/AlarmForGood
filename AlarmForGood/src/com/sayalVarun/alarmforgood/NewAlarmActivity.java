@@ -1,24 +1,62 @@
-package com.example.alarmforgood;
+package com.sayalVarun.alarmforgood;
 
-import android.os.Bundle;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.support.v4.app.NavUtils;
-import android.annotation.TargetApi;
-import android.content.Intent;
-import android.os.Build;
+import android.widget.EditText;
+import android.widget.TimePicker;
+import android.widget.TimePicker.OnTimeChangedListener;
+
+import com.example.alarmforgood.R;
 
 public class NewAlarmActivity extends Activity {
+    
+    private TimePicker picker;
+    
+    private EditText etaEditText;
+    
+    private Time now;
+    private Time then;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	
 	setContentView(R.layout.activity_new_alarm);
+	
 	// Show the Up button in the action bar.
 	setupActionBar();
+	
+	picker = (TimePicker)findViewById(R.id.alarmTimePicker);
+	
+	now = new Time(picker.getCurrentHour(), picker.getCurrentMinute());
+	
+	etaEditText = (EditText) findViewById(R.id.etaEditText);
+	
+	setUpOnTimeChangedListener();
+	
+    }
+    
+    private void setUpOnTimeChangedListener(){
+	picker.setOnTimeChangedListener(new OnTimeChangedListener(){
+
+	    @Override
+	    public void onTimeChanged(TimePicker arg0, int arg1, int arg2) {
+		then = new Time(picker.getCurrentHour(), picker.getCurrentMinute());
+		Time diff = then.calculateDifference(now);
+		updateETA(diff);
+	    }
+	    
+	});
+	
+    }
+    
+    private void updateETA(Time diff){
+	etaEditText.setText(diff.getHours()+" Hours, "+diff.getMinutes()+" Minutes.");
     }
 
     /**

@@ -8,6 +8,10 @@
     <string name="new_alarm_string">Create an Alarm</string>
     <string name="new_alarm_button_string">New Alarm</string>
     <string name="title_activity_new_alarm">NewAlarmActivity</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="alarm_set_string">Set Alarm Time:</string>
+    <string name="alarm_eta_string">You Will Be Alerted in:</string>
+    <string name="alarm_eta_edit_hint">The ETA To Your Alert Will Appear Here</string>
+    <string name="create_alarm_string">Create New Alarm</string> 
+    
 
 </resources>

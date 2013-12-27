@@ -8,10 +8,52 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".NewAlarmActivity" >
 
-    <TextView
+    <EditText
+        android:id="@+id/etaEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" 
-        />
+        android:layout_below="@+id/alarmEtaTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:ems="10" 
+        android:hint="@string/alarm_eta_edit_hint">
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/alarmTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/alarm_set_string"
+        android:textSize="15sp" />
+
+    <TimePicker
+        android:id="@+id/alarmTimePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/alarmTitleTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/alarmEtaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/alarmTimePicker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="@string/alarm_eta_string" />
+
+    <Button
+        android:id="@+id/newAlarmButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etaEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="@string/create_alarm_string" />
 
 </RelativeLayout>

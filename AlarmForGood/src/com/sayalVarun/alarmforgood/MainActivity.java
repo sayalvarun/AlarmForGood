@@ -1,4 +1,6 @@
-package com.example.alarmforgood;
+package com.sayalVarun.alarmforgood;
+
+import com.example.alarmforgood.R;
 
 import android.os.Bundle;
 import android.app.Activity;
