@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.TimePicker.OnTimeChangedListener;
@@ -18,6 +22,10 @@ public class NewAlarmActivity extends Activity {
     private TimePicker picker;
     
     private EditText etaEditText;
+    
+    private Button newAlarmButton;
+    
+    private DatePicker alarmDatePicker;
     
     private Time now;
     private Time then;
@@ -31,13 +39,21 @@ public class NewAlarmActivity extends Activity {
 	// Show the Up button in the action bar.
 	setupActionBar();
 	
-	picker = (TimePicker)findViewById(R.id.alarmTimePicker);
+	picker = (TimePicker) findViewById(R.id.alarmTimePicker);
 	
 	now = new Time(picker.getCurrentHour(), picker.getCurrentMinute());
 	
 	etaEditText = (EditText) findViewById(R.id.etaEditText);
 	
+	newAlarmButton = (Button) findViewById(R.id.newAlarmButton);
+	
+	alarmDatePicker = (DatePicker) findViewById(R.id.alarmDatePicker);
+	
 	setUpOnTimeChangedListener();
+	
+	setUpOnDateChangedListener();
+	
+	setUpButtonOnClickListener();
 	
     }
     
@@ -54,6 +70,27 @@ public class NewAlarmActivity extends Activity {
 	});
 	
     }
+    
+    private void setUpOnDateChangedListener(){
+	
+    }
+    
+    
+    
+    private void setUpButtonOnClickListener(){
+	newAlarmButton.setOnClickListener(new OnClickListener(){
+
+	    @Override
+	    public void onClick(View arg0) {
+		
+		
+	    }
+	    
+	});
+	
+    }
+	
+    
     
     private void updateETA(Time diff){
 	etaEditText.setText(diff.getHours()+" Hours, "+diff.getMinutes()+" Minutes.");
